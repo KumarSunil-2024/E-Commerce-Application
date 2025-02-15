@@ -1,5 +1,7 @@
 package com.ecom.controller;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +9,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.ui.Model; 
 
 import com.ecom.entity.Admin;
+import com.ecom.entity.Order;
 import com.ecom.entity.Product;
 import com.ecom.entity.User;
 import com.ecom.service.AdminService;
@@ -16,7 +20,6 @@ import com.ecom.service.OrderService;
 import com.ecom.service.ProductService;
 import com.ecom.service.UserService;
 
-import ch.qos.logback.core.model.Model;
 
 @Controller
 public class AdminController {
@@ -134,8 +137,7 @@ public class AdminController {
 	public String placeOrder(Order order, Long userId, RedirectAttributes redirectAttributes) {
 		double totalAmount = order.getPrice() * order.getQuantity();
 		order.setAmount(totalAmount);
-		order.setDate(new Date());
-		
+		order.setDate(new java.util.Date());
 		User user = userService.getUserById(userId);
 		order.setUser(user);
 		

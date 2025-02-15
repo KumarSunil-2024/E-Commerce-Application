@@ -2,12 +2,11 @@ package com.ecom.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;  
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.ecom.entity.Message;
 import com.ecom.service.ContactService;
-
-import ch.qos.logback.core.model.Model;
 
 @Controller
 public class ContactController {

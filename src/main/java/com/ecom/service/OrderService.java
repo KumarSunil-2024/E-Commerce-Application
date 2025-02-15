@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecom.entity.Order;
+import com.ecom.entity.User;
 import com.ecom.repo.OrderRepo;
+
 
 @Service
 public class OrderService {
@@ -14,24 +16,29 @@ public class OrderService {
     @Autowired
     private OrderRepo orderRepo;
 
-    public List<Order> getAllOrders() {
-        return orderRepo.findAll();
-    }
-
-    public Order getOrderById(Long id) {
-        return orderRepo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order with id " + id + " not found"));
-    }
-
-    public void updateOrder(Order order) {
-        orderRepo.findById(order.getId())
-                .orElseThrow(() -> new RuntimeException("Order with id " + order.getId() + " not found"));
-        orderRepo.save(order);
-    }
-
-    public void deleteOrder(Long id) {
-        orderRepo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order with id " + id + " not found"));
-        orderRepo.deleteById(id);
-    }
+    public List<Order> getAllOrder() {
+		return orderRepo.findAll();
+	}
+	
+	public Order getOrderById(Long id) {
+		return orderRepo.findById(id).orElseThrow(() -> new RuntimeException("Order with id " + id + " not found"));
+	}
+	
+	public void createOrder(Order Order) {
+		orderRepo.save(Order);
+	}
+	
+	public void updateOrder(Order Order) {
+		orderRepo.findById(Order.getId()).orElseThrow(() -> new RuntimeException("Order with id " + Order.getId() + " not found"));
+		orderRepo.save(Order);
+	}
+	
+	public void deleteOrder(Long id) {
+		orderRepo.findById(id).orElseThrow(() -> new RuntimeException("Order with id " + id + " not found"));
+		orderRepo.deleteById(id);
+	}
+	
+	public Order findOrdersByUser(User user) {
+		return orderRepo.findByUser(user);
+	}
 }

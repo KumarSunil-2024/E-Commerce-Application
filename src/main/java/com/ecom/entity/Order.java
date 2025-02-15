@@ -1,6 +1,6 @@
 package com.ecom.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,21 +13,23 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="orders")
 public class Order {
-
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	private String name;
 	
 	private double price;
 	
-	private int quality;
+	private int quantity;
 	
 	private Date date;
 	
 	private double amount;
 	
 	@ManyToOne
-	@JoinColumn(name="userId")
+	@JoinColumn(name = "userId")
 	private User user;
 
 	public Long getId() {
@@ -38,6 +40,14 @@ public class Order {
 		this.id = id;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public double getPrice() {
 		return price;
 	}
@@ -46,12 +56,12 @@ public class Order {
 		this.price = price;
 	}
 
-	public int getQuality() {
-		return quality;
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setQuality(int quality) {
-		this.quality = quality;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Date getDate() {
@@ -77,6 +87,5 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
+
 }

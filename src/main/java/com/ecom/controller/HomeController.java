@@ -23,7 +23,7 @@ public class HomeController {
 	
 	@GetMapping("/products")
 	public String productPage(Model model) {
-		model.addAttribute("productList", productService.getAllProducts());
+		model.addAttribute("productList", productService.getAllProduct());
 		
 		return "Products";
 	}
