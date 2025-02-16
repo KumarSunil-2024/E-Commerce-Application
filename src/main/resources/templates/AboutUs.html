@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>About Us</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<style type="text/css">
+		.intro-section {
+			color: black;
+			text-align: center;
+			padding: 100px 20px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+		<div class="container-fluid">
+			<a class="navbar-brand me-5" th:href="@{/}">Ecommerce App</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item me-5"><a class="nav-link active" th:href="@{/home}">Home</a></li>
+					<li class="nav-item me-5"><a class="nav-link" th:href="@{/aboutUs}">About Us</a></li>
+					<li class="nav-item me-5"><a class="nav-link" th:href="@{/products}">Products</a></li>
+					<li class="nav-item me-5"><a class="nav-link" th:href="@{/contactUs}">Contact Us</a></li>
+				</ul>
+				<a th:href="@{/login}" class="btn btn-success">Login</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Introduction Section -->
+	<section class="intro-section bg-primary-subtle">
+		<div class="container">
+			<h1>Welcome to Our Ecommerce App</h1>
+			<p class="lead">Your one-stop destination for quality products at the best prices.</p>
+			<p>We provide a seamless online shopping experience, connecting buyers with top-quality products across various categories.</p>
+		</div>
+	</section>
+
+	<!-- About Us Section -->
+	<section class="py-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1>About Us</h1>
+					<p class="lead">
+						We are a leading eCommerce platform dedicated to offering a wide variety of products with top-notch quality and excellent customer service.
+					</p>
+					<p>
+						Founded with a vision to simplify online shopping, we ensure secure transactions, fast deliveries, and exceptional support.
+						From electronics to fashion, we bring you the best deals and products right to your doorstep.
+					</p>
+				</div>
+				<div class="col-lg-6 text-center">
+					<i class="bi bi-buildings-fill" style="font-size: 150px;"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Meet Our Team -->
+	<section class="bg-light py-5">
+		<div class="container">
+			<h2 class="text-center mb-4">Meet Our Team</h2>
+			<div class="row">
+				<div class="col-md-4 text-center">
+					<i class="bi bi-person-circle" style="font-size: 150px;"></i>
+					<h4>John Doe</h4>
+					<p>CEO - Founder</p>
+				</div>
+				<div class="col-md-4 text-center">
+					<i class="bi bi-person-circle" style="font-size: 150px;"></i>
+					<h4>Jane Doe</h4>
+					<p>CTO - Technology Head</p>
+				</div>
+				<div class="col-md-4 text-center">
+					<i class="bi bi-person-circle" style="font-size: 150px;"></i>
+					<h4>Emily Doe</h4>
+					<p>COO - Operations Lead</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-dark text-white text-center py-3">
+		<p>&copy; 2025 Ecommerce App. All rights reserved.</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
